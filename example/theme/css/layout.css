@@ -1,0 +1,122 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+	background:#f2f2f2;
+	font-family: "Helvetica Neue", Arial, sans-serif;
+	font-size:90%;
+	color:#333;
+	line-height:1.5;
+	word-wrap:break-word;
+}
+
+#content {
+	background:#fff;
+	color:#808080;
+	padding:20px 20px 20px 20px;
+	width:500px;
+	margin:auto;
+}
+
+#header {
+	background:#FFCB00;
+	color:#fff;
+	padding:10px;
+	font-size:2em;
+	font-weight:300;
+	letter-spacing:2px;
+	margin-bottom:20px;
+}
+
+article h1 {
+	font-size:1.6em;
+	font-weight:300;
+	letter-spacing:2px;
+	margin-bottom:10px;
+	color:#222;
+}
+
+article {
+	padding-bottom:20px;
+}
+
+a {
+	text-decoration:none;
+	color:#FFCB00;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+.button {
+	border:0px;
+	background:#0c0c0c;
+	color:#fff;
+	padding:10px 20px 10px 20px;
+	font-size:1.2em;
+	text-transform:uppercase;
+	cursor:pointer;
+	border-radius:3px;
+	margin-top:20px;
+}
+
+.error,
+.valid,
+.message {
+	padding:10px;
+	margin-bottom:10px;
+	font-size:110%;
+	border-radius:3px;
+}
+
+.valid {
+	background:rgba(113, 179, 61, 1);
+	color:#fff;
+}
+
+.error {
+	background:#DF3737;
+	color:#fff;
+}

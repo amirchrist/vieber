@@ -1,0 +1,16 @@
+<article>
+	<h1>Testing File Uploads</h1>
+	## if (isset($app->uploaded_file)) ##
+	<div class="valid">
+		Success!
+	</div>
+	<p>
+		Uploaded the file:
+		<div><a href="## $app->uploaded_file ##">## $app->uploaded_file ##</a></div>
+	</p>
+	## /if ##
+	<form method="post" action="## url upload ##" enctype="multipart/form-data">
+		<div><input type="file" name="file" /></div>
+		<div><input type="submit" class="button" value="Upload" /></div>
+	</form>
+</article>
