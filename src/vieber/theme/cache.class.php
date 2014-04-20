@@ -12,14 +12,11 @@ class Cache {
 	public function __construct(\Vieber\App $app, $data) {
 		$this->_app = $app;
 
-		$ldq = preg_quote('## ');
-		$rdq = preg_quote(' ##');
+		$ldq = preg_quote('{{');
+		$rdq = preg_quote('}}');
 
 		// remove all comments
 		$data = preg_replace("/\/\*(.*?)\*\//s", "", $data);
-
-		// Replace php code
-		/*$data = str_replace(array('<?php', '<?', '?>'), '', $data);*/
 
 		$text = preg_split("!{$ldq}.*?{$rdq}!s", $data);
 
@@ -95,7 +92,7 @@ class Cache {
 		}
 		else
 		{
-			$return .= 'echo "<!-- PHP NOT ALLOWED: ' . htmlspecialchars($tag) . ' -->";';
+			$return .= $tag;
 		}
 		$return .= ' ?>';
 
