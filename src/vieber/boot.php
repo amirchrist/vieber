@@ -2,6 +2,10 @@
 
 namespace Vieber {
 
+	if (version_compare(phpversion(), '5.4', '<=') === true) {
+		exit('Vieber requires PHP 5.5 or newer.');
+	}
+
 	define('VIEBER_PATH', dirname(__FILE__) . DIRECTORY_SEPARATOR);
 	define('VIEBER_DS', DIRECTORY_SEPARATOR);
 
