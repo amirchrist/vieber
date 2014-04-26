@@ -12,6 +12,12 @@ PHP 5.5 or higher
 
 Clone and check out a working example in the **example/** folder.
 
+Make sure the following folders are writeable:
+ /static/cache/
+ /static/css/
+ /static/jscript/
+ /static/uploads/
+
 To boot up Vieber from your own PHP App just require the **boot.php** file.
 ```
 require('/src/vieber/boot.php');
@@ -32,6 +38,16 @@ Vieber\Engine::start([
 
 These are the basic params that are required to get you up and running. With those settings in mind you then
 need to create the following file structure.
-
 * /app/
+ * /controller/index.php
+ * /model/
+ * /view/index.html
+* /jscript/main.js
+* /static/
+ * /cache/
+ * /css/
+ * /jscript/
+ * /uploads/
 * /theme/
+ * /css/layout.css
+ * /html/layout.html
