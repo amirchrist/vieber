@@ -8,7 +8,7 @@ for the creation of Apps for [Moxi9](http://moxi9.com/)
 
 PHP 5.5 or higher
 
-## Install
+## Example Install
 
 Clone and check out a working example in the **example/** folder.
 
@@ -19,6 +19,8 @@ Make sure the following folders are writeable:
 /static/jscript/
 /static/uploads/
 ```
+
+## Installing your own App
 
 To boot up Vieber from your own PHP App just require the **boot.php** file.
 ```
