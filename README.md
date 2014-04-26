@@ -13,10 +13,12 @@ PHP 5.5 or higher
 Clone and check out a working example in the **example/** folder.
 
 Make sure the following folders are writeable:
- /static/cache/
- /static/css/
- /static/jscript/
- /static/uploads/
+```
+/static/cache/
+/static/css/
+/static/jscript/
+/static/uploads/
+```
 
 To boot up Vieber from your own PHP App just require the **boot.php** file.
 ```
