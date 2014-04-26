@@ -10,6 +10,8 @@ class Engine {
 	public static $jscript_path;
 	public static $dev_mode;
 	public static $url;
+	public static $events;
+	public static $custom;
 
 	private static $_page = 'index';
 
@@ -17,7 +19,6 @@ class Engine {
 		foreach ($params as $key => $value) {
 			self::$$key = $value;
 		}
-
 
 		if (isset($_GET['page'])) {
 			self::$_page = $_GET['page'];
@@ -28,15 +29,19 @@ class Engine {
 			$path = self::$app_path . 'controller' . VIEBER_DS . self::$_page . VIEBER_DS . 'index.php';
 			self::$_page = self::$_page . VIEBER_DS . 'index';
 			if (!file_exists($path)) {
-				exit('Page not found!');
+				exit('Page not found:' . $path);
 			}
 		}
 
 		require($path);
 	}
 
-	public static function page() {
-		return self::$_page;
+	public static function page($page = null) {
+		if ($page === null) {
+			return self::$_page;
+		}
+
+		self::$_page = $page;
 	}
 }
 

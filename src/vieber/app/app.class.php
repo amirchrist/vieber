@@ -7,7 +7,11 @@ class App {
 	private $_header;
 	private $_footer;
 
+	public $request;
+
 	public function __construct() {
+
+		$this->request = new Request();
 
 		if (Engine::$dev_mode) {
 			$css = Engine::$theme_path . 'css' . VIEBER_DS;

@@ -14,6 +14,10 @@ class Page {
 
 		file_put_contents($static_path, $theme->parsed());
 
+		if (isset(Engine::$events['onload'])) {
+			call_user_func(Engine::$events['onload'], $app);
+		}
+
 		require($static_path);
 	}
 }

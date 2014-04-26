@@ -4,12 +4,16 @@ namespace Vieber;
 
 class Curl {
 	private $_url;
+	private $_type;
 	private $_curl;
 	private $_params;
 	private $_headers = [];
 
-	public function __construct($url) {
+	public function __construct($url, $type = null) {
 		$this->_url = $url;
+		if ($type !== null) {
+			$this->_type = $type;
+		}
 
 		$this->_curl = curl_init();
 		curl_setopt($this->_curl, CURLOPT_RETURNTRANSFER, true);
@@ -39,6 +43,10 @@ class Curl {
 		return $this->_process('POST');
 	}
 
+	public function get() {
+		return $this->_process('GET');
+	}
+
 	private function _process($method) {
 
 		if (is_array($this->_headers) && count($this->_headers)) {
@@ -57,6 +65,10 @@ class Curl {
 		}
 
 		$data = curl_exec($this->_curl);
+
+		if ($this->_type == 'json') {
+			$data = json_decode($data);
+		}
 
 		return $data;
 	}
