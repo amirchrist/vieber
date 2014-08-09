@@ -25,6 +25,10 @@ class Form {
 				$extra .= ' value="' . str_replace('"', '&#34;', json_encode($this->_values[$name])) . '" ';
 			}
 
+			if ($form['type'] == 'select') {
+				$extra .= ' options="' . str_replace('"', '&#34;', json_encode($form['options'])) . '" ';
+			}
+
 			echo '<m:form type="' . $form['type'] . '" name="' . $name . '" title="' . $form['title'] . '" ' . $extra . ' />';
 		}
 	}
