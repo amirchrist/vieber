@@ -8,10 +8,12 @@ class App {
 	private $_footer;
 
 	public $request;
+	public $url;
 
 	public function __construct() {
 
 		$this->request = new Request();
+		$this->url = new Url();
 
 		if (Engine::$dev_mode) {
 			$css = Engine::$theme_path . 'css' . VIEBER_DS;

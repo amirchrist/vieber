@@ -57,7 +57,9 @@ class Curl {
 			curl_setopt($this->_curl, CURLOPT_HTTPHEADER, $headers);
 		}
 
-		curl_setopt($this->_curl, CURLOPT_URL, (($method == 'GET' && !empty($this->_params)) ? $this->_url . '?' . ltrim($this->_params, '&') : $this->_url));
+		$url = (($method == 'GET' && !empty($this->_params)) ? $this->_url . '?' . ltrim($this->_params, '&') : $this->_url);
+
+		curl_setopt($this->_curl, CURLOPT_URL, $url);
 
 		if ($method == 'POST') {
 			curl_setopt($this->_curl, CURLOPT_POST, true);
@@ -67,7 +69,11 @@ class Curl {
 		$data = curl_exec($this->_curl);
 
 		if ($this->_type == 'json') {
+			$org_data = $data;
 			$data = json_decode($data);
+			if ($data === null) {
+				p($org_data);
+			}
 		}
 
 		return $data;

@@ -13,4 +13,3 @@ Vieber\Engine::start([
 	'url' => 'http://localhost/moxi9/vieber/example/',
 	'dev_mode' => true
 ]);
-?>
